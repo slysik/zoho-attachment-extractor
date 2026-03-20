@@ -1,0 +1,23 @@
+# Report template definitions.
+# Each template matches incoming files by subject/filename regex
+# and can specify extraction hints (expected metric names, units, etc.)
+
+templates:
+  - name: "Monthly Sales Report"
+    match_pattern: "monthly.*sales|sales.*report"
+    default_category: "Sales"
+    default_unit: "USD"
+    expected_metrics:
+      - "Total Revenue"
+      - "Units Sold"
+      - "Average Order Value"
+
+  - name: "Quarterly Financial Summary"
+    match_pattern: "quarterly.*financial|financial.*summary"
+    default_category: "Finance"
+    default_unit: "USD"
+    expected_metrics:
+      - "Revenue"
+      - "Expenses"
+      - "Net Income"
+      - "EBITDA"
