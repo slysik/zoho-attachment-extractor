@@ -6,17 +6,13 @@ A FastAPI service that extracts report metrics from email attachments (Excel, CS
 
 ## Architecture
 
-```
-Zoho Flow  →  POST /extract        (multipart upload — attachment + email metadata)
-           →  POST /extract/url    (JSON body with a direct download URL)
-           →  POST /extract/workdrive  (JSON body with a WorkDrive file ID)
-                     ↓
-           Extractor (Excel / CSV / PDF / OCR)
-                     ↓
-           Normalizer (applies template hints)
-                     ↓
-           Zoho Sheet (append rows)  +  WorkDrive (move to processed/failed)
-```
+![Flow diagram](docs/flow.svg)
+
+| Lane | What happens |
+|---|---|
+| **Zoho Ecosystem** | An email arrives → Zoho Flow fires → calls a webhook on this service. For WorkDrive mode, Flow drops the file in an incoming folder instead. |
+| **This Service** | FastAPI validates the request (optional HMAC secret), routes the file to the right extractor, runs the normalizer (applying template hints for default category/unit), and returns a structured JSON response. |
+| **Storage / Output** | Metrics are appended to Zoho Sheet via the OAuth client. For WorkDrive mode the file is moved to `processed/` or `failed/` depending on outcome. |
 
 ---
 

@@ -1,0 +1,201 @@
+<svg width="900" height="620" viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="620" fill="#f8f9fc" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a2e">Zoho Attachment Extractor — Flow</text>
+  <line x1="60" y1="48" x2="840" y2="48" stroke="#dde1ef" stroke-width="1.5"/>
+
+  <!-- ═══════════════════════════════════════════════════
+       LANE BACKGROUNDS
+  ═══════════════════════════════════════════════════ -->
+
+  <!-- Lane: Zoho Ecosystem -->
+  <rect x="30" y="64" width="250" height="530" fill="#eef2ff" rx="10" opacity="0.7"/>
+  <text x="155" y="84" text-anchor="middle" font-size="11" font-weight="600" fill="#6366f1" letter-spacing="0.5">ZOHO ECOSYSTEM</text>
+
+  <!-- Lane: This Service -->
+  <rect x="300" y="64" width="360" height="530" fill="#f0fdf4" rx="10" opacity="0.7"/>
+  <text x="480" y="84" text-anchor="middle" font-size="11" font-weight="600" fill="#16a34a" letter-spacing="0.5">THIS SERVICE (FastAPI)</text>
+
+  <!-- Lane: Storage / Output -->
+  <rect x="680" y="64" width="190" height="530" fill="#fff7ed" rx="10" opacity="0.7"/>
+  <text x="775" y="84" text-anchor="middle" font-size="11" font-weight="600" fill="#ea580c" letter-spacing="0.5">STORAGE / OUTPUT</text>
+
+  <!-- ═══════════════════════════════════════════════════
+       ZOHO LANE — nodes
+  ═══════════════════════════════════════════════════ -->
+
+  <!-- Email -->
+  <rect x="55" y="100" width="180" height="52" rx="8" fill="#6366f1" filter="url(#shadow)"/>
+  <text x="145" y="121" text-anchor="middle" font-size="13" font-weight="700" fill="white">📧 Email</text>
+  <text x="145" y="140" text-anchor="middle" font-size="10.5" fill="#c7d2fe">with attachment</text>
+
+  <!-- Arrow down -->
+  <line x1="145" y1="152" x2="145" y2="182" stroke="#6366f1" stroke-width="2" marker-end="url(#arrowIndigo)"/>
+
+  <!-- Zoho Flow -->
+  <rect x="55" y="182" width="180" height="52" rx="8" fill="#818cf8" filter="url(#shadow)"/>
+  <text x="145" y="203" text-anchor="middle" font-size="13" font-weight="700" fill="white">⚡ Zoho Flow</text>
+  <text x="145" y="221" text-anchor="middle" font-size="10.5" fill="#e0e7ff">trigger + webhook</text>
+
+  <!-- Arrow right to /extract -->
+  <line x1="235" y1="208" x2="318" y2="208" stroke="#818cf8" stroke-width="2" marker-end="url(#arrowIndigo)"/>
+  <text x="276" y="202" text-anchor="middle" font-size="9.5" fill="#6366f1">HTTPS POST</text>
+
+  <!-- WorkDrive -->
+  <rect x="55" y="390" width="180" height="52" rx="8" fill="#a5b4fc" filter="url(#shadow)"/>
+  <text x="145" y="411" text-anchor="middle" font-size="13" font-weight="700" fill="white">🗂 WorkDrive</text>
+  <text x="145" y="429" text-anchor="middle" font-size="10.5" fill="#e0e7ff">file storage</text>
+
+  <!-- WorkDrive sub-labels -->
+  <text x="62" y="460" font-size="9.5" fill="#4f46e5">📥 incoming/</text>
+  <text x="62" y="474" font-size="9.5" fill="#16a34a">✅ processed/</text>
+  <text x="62" y="488" font-size="9.5" fill="#dc2626">❌ failed/</text>
+
+  <!-- ═══════════════════════════════════════════════════
+       SERVICE LANE — nodes
+  ═══════════════════════════════════════════════════ -->
+
+  <!-- Endpoints box -->
+  <rect x="318" y="180" width="170" height="58" rx="8" fill="#22c55e" filter="url(#shadow)"/>
+  <text x="403" y="201" text-anchor="middle" font-size="12" font-weight="700" fill="white">API Endpoints</text>
+  <text x="403" y="216" text-anchor="middle" font-size="9" fill="#dcfce7">POST /extract</text>
+  <text x="403" y="228" text-anchor="middle" font-size="9" fill="#dcfce7">POST /extract/url  · /workdrive</text>
+
+  <!-- Arrow down to router -->
+  <line x1="403" y1="238" x2="403" y2="268" stroke="#22c55e" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Webhook verify badge -->
+  <rect x="500" y="188" width="148" height="42" rx="6" fill="#fef9c3" stroke="#fbbf24" stroke-width="1.2"/>
+  <text x="574" y="206" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">🔐 Webhook Secret</text>
+  <text x="574" y="221" text-anchor="middle" font-size="9" fill="#78350f">HMAC-SHA256 verify</text>
+  <line x1="500" y1="209" x2="488" y2="209" stroke="#fbbf24" stroke-width="1.5" marker-end="url(#arrowAmber)"/>
+
+  <!-- Router -->
+  <rect x="343" y="268" width="120" height="44" rx="8" fill="#15803d" filter="url(#shadow)"/>
+  <text x="403" y="286" text-anchor="middle" font-size="12" font-weight="700" fill="white">🔀 Router</text>
+  <text x="403" y="301" text-anchor="middle" font-size="9.5" fill="#bbf7d0">by file extension</text>
+
+  <!-- Arrows from router to extractors -->
+  <line x1="403" y1="312" x2="403" y2="345" stroke="#15803d" stroke-width="1.5" marker-end="url(#arrowDkGreen)"/>
+
+  <!-- Extractors group -->
+  <rect x="316" y="345" width="336" height="108" rx="8" fill="white" stroke="#86efac" stroke-width="1.5"/>
+  <text x="484" y="363" text-anchor="middle" font-size="10.5" font-weight="700" fill="#15803d">Extractors</text>
+
+  <!-- Excel -->
+  <rect x="326" y="370" width="70" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="361" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">📊 Excel</text>
+  <text x="361" y="397" text-anchor="middle" font-size="8.5" fill="#064e3b">.xlsx / .xls</text>
+
+  <!-- CSV -->
+  <rect x="406" y="370" width="70" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="441" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">📄 CSV</text>
+  <text x="441" y="397" text-anchor="middle" font-size="8.5" fill="#064e3b">.csv</text>
+
+  <!-- PDF -->
+  <rect x="486" y="370" width="70" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="521" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">📑 PDF</text>
+  <text x="521" y="397" text-anchor="middle" font-size="8.5" fill="#064e3b">table + regex</text>
+
+  <!-- OCR -->
+  <rect x="566" y="370" width="76" height="36" rx="6" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="604" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">🖼 OCR</text>
+  <text x="604" y="397" text-anchor="middle" font-size="8.5" fill="#064e3b">png/jpg/tiff</text>
+
+  <!-- Arrow down from extractors -->
+  <line x1="484" y1="453" x2="484" y2="483" stroke="#15803d" stroke-width="1.5" marker-end="url(#arrowDkGreen)"/>
+
+  <!-- Normalizer -->
+  <rect x="394" y="483" width="180" height="50" rx="8" fill="#166534" filter="url(#shadow)"/>
+  <text x="484" y="503" text-anchor="middle" font-size="12" font-weight="700" fill="white">🔧 Normalizer</text>
+  <text x="484" y="520" text-anchor="middle" font-size="9.5" fill="#bbf7d0">template hints · confidence score</text>
+
+  <!-- Template registry bubble -->
+  <rect x="500" y="362" width="145" height="38" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="572" y="377" text-anchor="middle" font-size="9.5" font-weight="600" fill="#78350f">📋 Template Registry</text>
+  <text x="572" y="391" text-anchor="middle" font-size="8.5" fill="#92400e">templates.yaml → category/unit</text>
+  <!-- arrow from registry to normalizer -->
+  <line x1="572" y1="400" x2="540" y2="483" stroke="#f59e0b" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arrowAmber)"/>
+
+  <!-- ═══════════════════════════════════════════════════
+       STORAGE LANE — nodes
+  ═══════════════════════════════════════════════════ -->
+
+  <!-- Zoho Sheet -->
+  <rect x="698" y="180" width="154" height="52" rx="8" fill="#ea580c" filter="url(#shadow)"/>
+  <text x="775" y="201" text-anchor="middle" font-size="13" font-weight="700" fill="white">📊 Zoho Sheet</text>
+  <text x="775" y="219" text-anchor="middle" font-size="10" fill="#fed7aa">append rows</text>
+
+  <!-- JSON Response -->
+  <rect x="698" y="483" width="154" height="50" rx="8" fill="#c2410c" filter="url(#shadow)"/>
+  <text x="775" y="503" text-anchor="middle" font-size="12" font-weight="700" fill="white">📤 JSON Response</text>
+  <text x="775" y="520" text-anchor="middle" font-size="9.5" fill="#fed7aa">metrics · confidence · errors</text>
+
+  <!-- ═══════════════════════════════════════════════════
+       CROSS-LANE ARROWS
+  ═══════════════════════════════════════════════════ -->
+
+  <!-- WorkDrive → download → service (for /workdrive endpoint) -->
+  <path d="M235 416 Q275 416 318 310" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowIndigo)"/>
+  <text x="258" y="380" text-anchor="middle" font-size="8.5" fill="#4f46e5" transform="rotate(-60,258,380)">download</text>
+
+  <!-- Service → move file → WorkDrive processed/failed -->
+  <path d="M318 490 Q270 490 235 455" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowIndigo)"/>
+  <text x="262" y="508" text-anchor="middle" font-size="8.5" fill="#4f46e5">move file</text>
+
+  <!-- Normalizer → Zoho Sheet -->
+  <line x1="574" y1="507" x2="698" y2="507" stroke="#ea580c" stroke-width="1.8" marker-end="url(#arrowOrange)"/>
+  <text x="636" y="499" text-anchor="middle" font-size="9" fill="#ea580c">write rows</text>
+
+  <!-- Normalizer → JSON response (same box) handled by arrow down into response -->
+  <line x1="484" y1="533" x2="484" y2="555" stroke="#166534" stroke-width="1.5"/>
+  <line x1="484" y1="555" x2="698" y2="555" stroke="#166534" stroke-width="1.5" marker-end="url(#arrowDkGreen)"/>
+  <text x="591" y="548" text-anchor="middle" font-size="9" fill="#166534">return to caller</text>
+
+  <!-- Sheet → WorkDrive (Zoho side connection) -->
+  <line x1="775" y1="232" x2="775" y2="380" stroke="#ea580c" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="775" y1="380" x2="698" y2="380" stroke="#ea580c" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="742" y="374" text-anchor="middle" font-size="8" fill="#ea580c">Zoho API</text>
+
+  <!-- Normalizer → Sheet arrow anchor -->
+  <line x1="775" y1="380" x2="775" y2="483" stroke="#ea580c" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ═══════════════════════════════════════════════════
+       ZOHO CLIENT badge
+  ═══════════════════════════════════════════════════ -->
+  <rect x="698" y="290" width="154" height="76" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.2"/>
+  <text x="775" y="308" text-anchor="middle" font-size="10" font-weight="700" fill="#ea580c">🔑 Zoho OAuth Client</text>
+  <text x="775" y="323" text-anchor="middle" font-size="8.5" fill="#9a3412">auto token refresh</text>
+  <text x="775" y="336" text-anchor="middle" font-size="8.5" fill="#9a3412">1hr TTL + retry</text>
+  <text x="775" y="349" text-anchor="middle" font-size="8.5" fill="#9a3412">WorkDrive · Sheet APIs</text>
+  <line x1="698" y1="328" x2="574" y2="328" stroke="#ea580c" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrowOrange)"/>
+  <text x="636" y="321" text-anchor="middle" font-size="8.5" fill="#ea580c">used by</text>
+
+  <!-- ═══════════════════════════════════════════════════
+       DEFS — markers + shadow
+  ═══════════════════════════════════════════════════ -->
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000022"/>
+    </filter>
+    <marker id="arrowIndigo" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#6366f1"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowDkGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#166534"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+</svg>
